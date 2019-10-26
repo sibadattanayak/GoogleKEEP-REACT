@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Card, TextField, Snackbar, IconButton, Button } from '@material-ui/core'
-import {login} from '../services/userservice'
+import React from 'react';
+import { Card, TextField, Snackbar, IconButton, Button } from '@material-ui/core';
+import { login } from '../services/userservice';
+
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -35,19 +36,21 @@ export default class Login extends React.Component {
             })
         }
         else {
-            let data={
-                "userEmail":this.state.userEmail,
-                "userPassword":this.state.userPassword
+            console.log(" React version >> " + React.version);
+
+            let data = {
+                "userEmail": this.state.userEmail,
+                "userPassword": this.state.userPassword
             }
-            console.log("loginComponent",data)
-            login(data).then(res=>{
+            console.log("loginComponent", data)
+            login(data).then(res => {
                 console.log(res)
                 localStorage.setItem('token', res.data.description);
-                console.log("TOKEN",localStorage.getItem('token'));
+                console.log("TOKEN", localStorage.getItem('token'));
                 this.props.history.push('/dashboard')
-                
-            }).catch(err=>{
-                console.log("Error after hitting login api  ",err);
+
+            }).catch(err => {
+                console.log("Error after hitting login api  ", err);
             })
         }
     }
@@ -61,25 +64,31 @@ export default class Login extends React.Component {
             <div className="login-container">
                 <Card className="login-card">
                     <div>
-                    <h1>
-                        Fundoo Login
+                        <h1>
+                            Fundoo Login
                 </h1>
-                    <TextField
-                        id="userEmail"
-                        placeholder="Email"
-                        variant="outlined"
-                        value={this.state.userEmail}
-                        onChange={this.handleuserEmail}
-                    /> <br /> <br /> <br />
-                    <TextField
-                        id="userPassword"
-                        placeholder="Password"
-                        variant="outlined"
-                        value={this.state.userPassword}
-                        onChange={this.handleuserPassword}
-                    /> <br /> <br /> <br />
-                    <Button onClick={this.handleSubmit}>Login</Button>
-                    <div > <a href="/register"></a></div>
+                        <TextField
+                            id="userEmail"
+                            placeholder="example@gmail.com"
+                            variant="outlined"
+                            value={this.state.userEmail}
+                            onChange={this.handleuserEmail}
+                        /> <br /> <br /> <br />
+                        <input className="password-field" type="password"
+
+                            id="userPassword"
+                            placeholder="********"
+                            variant="outlined"
+
+                            value={this.state.userPassword}
+
+                            onChange={this.handleuserPassword}
+                        /> <br /> <br /> 
+                        <Button onClick={this.handleSubmit}>Login</Button>
+                        <br />
+                        <div > <a href="/registration">Registration / </a> 
+                        <a href="/forgotpassword">Forgot Password</a>
+                        </div>
                     </div>
                 </Card>
                 <Snackbar

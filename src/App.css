@@ -10,6 +10,13 @@
    display: flex;
    justify-content: center;
   }
+  .password-field{
+    width: 223px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+
+  }
 /*=========Registration=========*/
   
 .registration-container {
@@ -46,3 +53,34 @@
  display: flex;
  justify-content: center;
 }
+/*=========Dashboard Main Div=========*/
+ 
+.mainDiv{
+  display: flex;
+  flex-direction: row;
+}
+/*====================================*/
+.noteCard-component{
+   display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  .noteCard{
+    width: 400px;
+   display: flex;
+   justify-content: center;
+  }
+   
+   .notesProperties{
+     visibility: hidden;  
+     margin-top:170px ;
+   
+  }
+   .noteCard:hover .notesProperties{
+       visibility: visible;
+     }
+/*=======================*/
+.drawer-container{
+  
+}
+

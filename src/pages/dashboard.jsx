@@ -1,35 +1,65 @@
-import React, { Component } from 'react';
-import { Card, TextField, Snackbar, IconButton, Button } from '@material-ui/core'
+import React from 'react';
+import { AppBar, createMuiTheme, MuiThemeProvider } from '@material-ui/core'
+import MenuOutlinedIcon from '@material-ui/icons/MenuOutlined';
+import RefreshOutlinedIcon from '@material-ui/icons/RefreshOutlined';
+import AppsOutlinedIcon from '@material-ui/icons/AppsOutlined';
+import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase';
+import Note_card from '../components/note_card';
+import SideBar from '../components/side_navigation_bar'
 
+
+
+const theme = createMuiTheme({
+    overrides: {
+        MuiAppBar: {
+            colorPrimary: {
+                color: "#212121",
+                backgroundColor: "rgba(255,255,255,1)",
+            }
+        }
+    }
+})
 export default class Dashboard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             snackBarMsg: '',
             openSnackBar: false,
+            menu:false,
         }
     }
-    handleuserEmail = (event) => {
-        this.setState({
-            userEmail: event.target.value
+    handleMenu=async()=>{
+        console.log("in menuuuuuu",this.state.menu)
+        await this.setState({
+            menu:!this.state.menu
         })
+        console.log("in menuuuuuu1111111",this.state.menu)
+       // this.props.getMenu(this.state.menu)
     }
-
     render() {
         return (
-            <div className="login-container">
-                <Card className="login-card">
-                    <h1>
-                       Dashboard
-                </h1>
-                    <TextField
-                        id="userEmail"
-                        placeholder="userEmail"
-                        variant="outlined"
-                        
-                    />
-                </Card>
-            </div>
+            <MuiThemeProvider theme={theme}>
+                <div className="dashboardPage">
+                    <AppBar position="static" >
+                        <div className="mainDiv">
+                            <MenuOutlinedIcon onClick={this.handleMenu}/>
+                            <SideBar menuOpen={this.state.menu}></SideBar>
+                            Keep
+                            <SearchIcon />
+                            <InputBase
+                                placeholder="Search…"
+                                inputProps={{ 'aria-label': 'search' }}
+                            />
+                            <RefreshOutlinedIcon />
+                            <AppsOutlinedIcon />
+                        </div>
+                    </AppBar>
+                </div>
+                <Note_card />
+            </MuiThemeProvider>
+
+
         )
     }
 }

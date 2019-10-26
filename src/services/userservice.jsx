@@ -1,13 +1,10 @@
 import axios from 'axios'
 
 const baseURL = process.env.REACT_APP_BASE_URL
-console.log("token",baseURL);
-
 
 export function login(data) {
     console.log(data)
-    console.log("token",baseURL);
-
+   
     return axios.post(baseURL + '/login', data,
         {
             headers: { 'Content-Type': 'application/json' }
