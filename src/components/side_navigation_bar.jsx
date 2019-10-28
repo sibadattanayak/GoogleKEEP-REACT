@@ -97,7 +97,7 @@ class Side_navigation_bar extends Component {
             <div className="drawer-container" >
                 <MuiThemeProvider theme={theme} >
                     <div className="drawer-div1" style={{ borderRadius: "0px 50px 50px 0px" }}>
-                        <Drawer variant="persistent" overflow="auto" open={this.props.menuOpen}  >
+                        <Drawer className="drawer" variant="persistent" overflow="auto" open={this.props.menuOpen}  >
                             <MenuItem id="notes" className="drawer-data" onClick={this.handleColor} >
                                 <EmojiObjectsOutlinedIcon />
                                 <span className="drawer-names">Notes</span>

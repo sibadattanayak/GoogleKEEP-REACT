@@ -24,7 +24,7 @@ export default class Forgotpassword extends React.Component {
         if (this.state.email === '') {
             this.setState({
                 openSnackBar: true,
-                snackBarMsg: "email cannot be empty"
+                snackBarMsg: "Email cannot be empty"
             })
         }
 
@@ -58,16 +58,18 @@ export default class Forgotpassword extends React.Component {
                     <div>
                         <h1>
                             Forgot Password
-                    </h1>
+                        </h1>
+                        <div className="forgotEmail">
                         <TextField
                             id="email"
                             placeholder="Email"
                             variant="outlined"
                             value={this.state.email}
                             onChange={this.handleEmail}
-                        />
-                        <Button onClick={this.handleSubmit}>Submit</Button>
-                    </div>
+                        /></div>
+                        <div className="forgotButton">
+                        <Button variant="contained" color="primary" onClick={this.handleSubmit}>Submit</Button>
+                    </div></div>
                 </Card>
 
                 <Snackbar

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import { AppBar, createMuiTheme, MuiThemeProvider } from '@material-ui/core'
 import MenuOutlinedIcon from '@material-ui/icons/MenuOutlined';
@@ -7,8 +8,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Note_card from '../components/note_card';
 import SideBar from '../components/side_navigation_bar'
-
-
 
 const theme = createMuiTheme({
     overrides: {
@@ -30,15 +29,16 @@ export default class Dashboard extends React.Component {
         }
     }
     handleMenu=async()=>{
-        console.log("in menuuuuuu",this.state.menu)
+        console.log("Inside handleMenu1=>> ",this.state.menu)
         await this.setState({
             menu:!this.state.menu
         })
-        console.log("in menuuuuuu1111111",this.state.menu)
+        console.log("Inside handleMenu2=>>",this.state.menu)
        // this.props.getMenu(this.state.menu)
     }
     render() {
         return (
+            <div className="mainDashboard">
             <MuiThemeProvider theme={theme}>
                 <div className="dashboardPage">
                     <AppBar position="static" >
@@ -46,18 +46,23 @@ export default class Dashboard extends React.Component {
                             <MenuOutlinedIcon onClick={this.handleMenu}/>
                             <SideBar menuOpen={this.state.menu}></SideBar>
                             Keep
+                            <div className="dashboardSearchBar">
                             <SearchIcon />
+                            
                             <InputBase
                                 placeholder="Search…"
                                 inputProps={{ 'aria-label': 'search' }}
-                            />
+                            /></div>
                             <RefreshOutlinedIcon />
                             <AppsOutlinedIcon />
                         </div>
                     </AppBar>
                 </div>
+                <div className="dashboardNoteCard">
                 <Note_card />
+                </div>
             </MuiThemeProvider>
+            </div>
 
 
         )

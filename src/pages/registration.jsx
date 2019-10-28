@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, TextField, Snackbar, IconButton, Button } from '@material-ui/core'
 import { registration } from '../services/userservice';
+
 export default class Registration extends React.Component {
     constructor(props) {
         super(props);
@@ -91,38 +92,58 @@ export default class Registration extends React.Component {
             <div className="registration-container">
                 <Card className="registration-card">
                     <div>
+                    <div className="regImage">
+                            <img src="/assets/images/registration.png" alt="Registration"></img>
+                        </div>  
                     <h1>
                         Fundoo Registration
                     </h1>
+                    <div className="regFName">
                     <TextField
+                    required
                         id="firstName"
                         placeholder="First Name"
                         variant="outlined"
                         value={this.state.firstName}
                         onChange={this.handlefirstName}
-                    />
+                    /></div>
+                    <div className="regLName">
                     <TextField
                         id="lastName"
                         placeholder="Last Name"
                         variant="outlined"
                         value={this.state.lastName}
                         onChange={this.handlelastName}
-                    />
+                    /></div>
+                    <div className="regEmail">
                     <TextField
+                    required
+                    fullWidth
+                    type="email"
                         id="email"
-                        placeholder="Email"
+                        placeholder="example@gmail.com"
                         variant="outlined"
                         value={this.state.email}
                         onChange={this.handleemail}
-                    />
-                    <TextField id="password"
-                        placeholder="Password"
+                    /></div>
+                    <div className="regPassword">
+                    <TextField 
+                    required
+                    type="password"
+                    id="password"
+                        placeholder=" * * * * * * * * * * * * * * * "
                         variant="outlined"
                         value={this.state.password}
                         onChange={this.handlePassword}
-                    />
-                    <Button onClick={this.handleSubmit}>Submit</Button>
+                    /></div>
+                    <div className="regButton">
+                    <Button size="small" variant="contained" color="primary" onClick={this.handleSubmit}>Submit</Button>
                     </div>
+                    <div className="regLink"> <a href="/">Login </a>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <a href="/forgotpassword">Forgot Password</a>
+                        </div>
+                        </div>
                 </Card>
 
                 <Snackbar

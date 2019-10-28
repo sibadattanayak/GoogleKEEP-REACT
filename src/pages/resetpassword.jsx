@@ -6,6 +6,7 @@ export default class Resetpassword extends React.Component {
         super(props);
         this.state = {
             password: '',
+            password2:'',
             snackBarMsg: '',
             openSnackBar: false,
         }
@@ -14,16 +15,29 @@ export default class Resetpassword extends React.Component {
 
     handlePassword = (event) => {
         this.setState({
-            password: event.target.value
+            password: event.target.value,
         })
     }
+
+    handlePassword2 = (event) => {
+        this.setState({
+            password2: event.target.value            
+        })
+    }
+
 
     handleSubmit = () => {
 
         if (this.state.password === '') {
             this.setState({
                 openSnackBar: true,
-                snackBarMsg: "pasword cannot be empty"
+                snackBarMsg: "Password cannot be empty"
+            })
+        }
+        else if(this.state.password !== this.state.password2){
+            this.setState({
+                openSnackBar: true,
+                snackBarMsg: "Password did not match"
             })
         }
 
@@ -54,15 +68,28 @@ export default class Resetpassword extends React.Component {
                         <h1>
                             Reset Password
                     </h1>
+                    <div className="resetPassword1">
                         <TextField
+                        type="password"
                             id="password"
-                            placeholder="Password"
+                            placeholder="New Password"
                             variant="outlined"
                             value={this.state.password}
                             onChange={this.handlePassword}
-                        />
-                        <Button onClick={this.handleSubmit}>Submit</Button>
-                    </div>
+                        /></div>
+                        
+                    <div className="resetPassword2">
+                        <TextField
+                        type="password"
+                            id="password2"
+                            placeholder="Confirm Password"
+                            variant="outlined"
+                            value={this.state.password2}
+                            onChange={this.handlePassword2}
+                        /></div>
+                        <div className="resetButton">
+                        <Button variant="contained" color="primary"  onClick={this.handleSubmit}>Submit</Button>
+                    </div></div>
                 </Card>
 
                 <Snackbar

@@ -3,84 +3,254 @@
 .login-container {
     display: flex;
     justify-content: center;
+    flex-direction: row;
     margin-top: 100px;
   }
   .login-card {
     width: 300px;
    display: flex;
    justify-content: center;
+   flex-direction: row;   
   }
-  .password-field{
-    width: 223px;
-    height: 45px;
+
+  .loginImage{
+    margin-bottom: 30px;
     display: flex;
-    justify-content: center;
+   justify-content: center;
+   flex-direction: row;
+  }
+
+  .loginEmail{
+    margin-bottom: 20px;
+  }
+
+  .loginPassword{
+    margin-bottom: 20px;
+  }
+
+  .loginButton {
+    margin-left: 73%;
+    margin-bottom: 20px;
 
   }
+
+  .linkDiv{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+
 /*=========Registration=========*/
   
 .registration-container {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    flex-direction: row;
   }
   .registration-card {
-    width: 300px;
+    width: 380px;
    display: flex;
    justify-content: center;
+   flex-direction: row;
   }
+
+  .regImage{
+    margin-bottom: 30px;
+    display: flex;
+   justify-content: center;
+   flex-direction: row;
+  }
+
+  .regFName{
+    width: 340px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    
+   }
+   
+   .regLName{
+     margin-bottom: 20px; 
+     width: 340px;
+     display: flex;
+     justify-content: center;
+     
+    }
+    
+   .regEmail{
+     margin-bottom: 20px;
+     width: 253px;
+     display: flex;
+     justify-content: center;
+     margin-left: 42px;
+    }
+    
+   .regPassword{
+     margin-bottom: 20px; 
+     width: 340px;
+     display: flex;
+     justify-content: center;
+     
+    }
+   
+    .regButton{
+    margin-bottom: 20px; 
+    display: flex;
+    justify-content: center;
+    margin-left: 170px;  
+  }
+
+    .regLink{
+      display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-left: 45px;  
+  }
+   
+
   /*=========Reset Password=========*/
   
 .resetPassword-container {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 130px;
+  flex-direction: row;
 }
 .resetPassword-card {
-  width: 300px;
+  width: 350px;
  display: flex;
  justify-content: center;
+ flex-direction: row;
+}
+
+.resetPassword1{
+  margin-bottom: 20px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  margin-left: 5px;
+
+}
+
+.resetPassword2{
+  margin-bottom: 20px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  margin-left: 5px;
+
+}
+
+.resetButton{
+  margin-bottom: 20px; 
+  display: flex;
+  justify-content: center;
+  margin-left: 170px;  
 }
 /*=========Forgot Password=========*/
   
 .forgotPassword-container {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
-}
-.forgotPassword-card {
-  width: 300px;
- display: flex;
- justify-content: center;
-}
-/*=========Dashboard Main Div=========*/
- 
-.mainDiv{
-  display: flex;
+  margin-top: 150px;
   flex-direction: row;
 }
-/*====================================*/
-.noteCard-component{
-   display: flex;
+.forgotPassword-card {
+  width: 400px;
+ display: flex;
+ justify-content: center;
+ flex-direction: row;
+}
+
+.forgotEmail {
+  
+  margin-bottom: 20px;
+  width: 253px;
+  display: flex;
+  justify-content: center;
+  margin-left: 15px;
+
+}
+
+.forgotButton{
+  margin-bottom: 20px; 
+    display: flex;
     justify-content: center;
-    margin-top: 100px;
-  }
+    margin-left: 170px; 
+}
+/*=========Dashboard Main Div=========*/
+
+.mainDiv{
+  display:flex;
+  flex-direction: row;
+  width: 821px;
+  height: 65px;
+}
+.dashboardAppBar{
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  margin-top: 5px;
+  width: 400px;
+}
+
+.dashboardGrid{
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  margin-top: 5px;
+  margin-right: -50px;
+}
+
+/*====================================*/
   .noteCard{
-    width: 400px;
    display: flex;
    justify-content: center;
+   flex-direction: row;
+   margin-top:30px;
+   margin-left:300px;
   }
-   
+
+.noteCardContent{
+  
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 250px;
+  height: 166px;
+  border: hidden;
+}
+
    .notesProperties{
-     visibility: hidden;  
-     margin-top:170px ;
-   
+    display: flex;
+    flex-direction: row;
+ justify-content: center;
+    visibility: hidden;  
+     margin-top:10px;
+     margin-bottom:-20px ;
+    
+  margin-left: -170px;
+
   }
    .noteCard:hover .notesProperties{
        visibility: visible;
+       display: flex;
+       flex-direction: row;
      }
 /*=======================*/
 .drawer-container{
-  
+  height: auto;
+}
+.drawer-div1{
+  height: auto;
+}
+
+.drawer-label
+{
+  height: auto;
+}
+.drawer{
+  height: auto;
 }
 

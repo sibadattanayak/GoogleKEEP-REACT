@@ -18,7 +18,7 @@ class Note_toolbar_menu extends React.Component {
             options : [
                 'Delete Note',
                 'Add Lebel',
-                'Comming Soon',
+                'Comming Soon' ,
             ]
 
         }
@@ -59,7 +59,7 @@ class Note_toolbar_menu extends React.Component {
                     }}
                 >
                     {this.state.options.map(option => (
-                        <MenuItem key={option} selected={option === 'Pyxis'} onClick={this.handleClose}>
+                        <MenuItem key={option} selected={option === 'Pyxis'} onClick={this.handleClose} >
                             {option}
                         </MenuItem>
                     ))}
