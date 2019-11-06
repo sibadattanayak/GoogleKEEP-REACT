@@ -1,133 +1,103 @@
-import React, { Component } from 'react';
-import Divider from '@material-ui/core/Divider';
+import React, { Component } from 'react'
 import Drawer from '@material-ui/core/Drawer';
 import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import Divider from '@material-ui/core/Divider';
 import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import DeleteTwoToneIcon from '@material-ui/icons/DeleteTwoTone';
-import { withRouter } from 'react-router-dom';
+import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
+import NotificationsIcon from '@material-ui/icons/Notifications'
+import Button from '@material-ui/core/Button';
+import {getLables} from '../services/labelservice'
 import LabelOutlinedIcon from '@material-ui/icons/LabelOutlined';
-import { MenuItem, MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
 const theme = createMuiTheme({
     overrides: {
         MuiDrawer: {
             paper: {
-                top: "69px"
+                top: "65px"
             },
             paperAnchorLeft: {
-                width: "230px"
+                width: "250px", 
+                height:'auto'
             }
-        },
-        MuiButtonBase: {
-            root: {
-                borderRadius: "0px 30px 30px 0px"
-            }
+
         }
     }
 })
-
-class Side_navigation_bar extends Component {
-    constructor() {
-        super();
+export default class Sidenav extends Component {
+    componentDidMount() {
+        getLables(localStorage.getItem('token')).then(res => {
+           console.log('all lables are' + res.data);
+           this.setState({
+               allLabels: res.data
+           });
+       }).
+           catch((err) => {
+               console.log('error ' + err);
+           })
+   };
+    constructor(props) {
+        super(props);
         this.state = {
-            open: false,
-            open2: false,
-            open3: false,
-            color: null,
-            appTitle: '',
-            allLabels: [],
-            pointer: 'Notes',
+            allLabels:[]
         }
     }
 
-    handleColor = () => {
-        this.setState({
-            pointer: 'Notes',
-        })
-        this.props.history.push('/dashboard');
+    handleGetNotesOfLabel= () =>{
+        
+    }
+    handleGetReminderNotes= () =>{
+        this.props.history.push('/reminder'); 
+    }
+    handleGetArchivedNotes= () =>{
+        this.props.history.push('/archive');
+    }
+    handleGetTrashedNotes= () =>{
+        this.props.history.push('/trash');
+        
     }
 
-    handleColor1 = async () => {
-        this.setState({
-            pointer: 'Reminder',
-            appTitle: "Reminder"
-        })
-        this.props.history.push('/reminder', this.state.appTitle);
-    }
-    handleColor2 = () => {
-        this.setState({
-            pointer: 'EditLabel',
-            color: "#FEEFC3"
-        })
-    }
-    handleColor3 = async () => {
-        this.setState({
-            appTitle: "Archive"
-        })
-        this.props.history.push('/archive', this.state.appTitle);
-        console.log('title =>> ', this.state.appTitle);
-
-    }
-    handleColor4 = async () => {
-        this.setState({
-            appTitle: "Trash"
-        })
-        this.props.history.push('/trash', this.state.appTitle);
-    }
-
-   
     render() {
-        var temp1 = this.state.open ? this.state.color : null
-        var temp2 = this.state.open1 ? this.state.color : null
-        var temp3 = this.state.open2 ? this.state.color : null
-        var temp4 = this.state.open3 ? this.state.color : null
-        var temp5 = this.state.open4 ? this.state.color : null
-        const labelMap = this.state.allLabels.map((key) => {
-
+        let displayallLables = this.state.allLabels.map((object,index) => {
             return (
-                <div className="drawer-label" >
-                    <LabelOutlinedIcon style={{ paddingRight: "30px" }} />
-                    {key.label}
-
-                </div>
+                <Button onClick={this.handleGetNotesOfLabel}>
+                    <LabelOutlinedIcon  />
+                    <span className="labeltext">{object.labelName}</span>
+                </Button>
             )
         })
         return (
-            
-            <div className="drawer-container" >
-                <MuiThemeProvider theme={theme} >
-                    <div className="drawer-div1" style={{ borderRadius: "0px 50px 50px 0px" }}>
-                        <Drawer className="drawer" variant="persistent" overflow="auto" open={this.props.menuOpen}  >
-                            <MenuItem id="notes" className="drawer-data" onClick={this.handleColor} >
-                                <EmojiObjectsOutlinedIcon />
-                                <span className="drawer-names">Notes</span>
-                            </MenuItem>
-                            <MenuItem id="notification" className="drawer-data" onClick={this.handleColor1} >
-
-                                <span className="drawer-names">Reminders</span>
-                            </MenuItem>
-                            <Divider />
-                            <div style={{ overflowY: "auto", height: "53%" }} >
-                                <h6 style={{ paddingLeft: "20px" }}>Lables</h6>
-                                <div className="drawer-labels">{labelMap}</div>
-                                <span id="editlabel" className="drawer-data" onClick={this.handleColor2} style={{ backgroundColor: temp3 }}>
-                                </span>
-                                <Divider />
-                            </div>
-                            <MenuItem id="archive" className="drawer-data" onClick={this.handleColor3} style={{ backgroundColor: temp4 }}>
-                                <ArchiveOutlinedIcon />
-                                <span className="drawer-names">Archive</span>
-                            </MenuItem>
-                            <MenuItem id="bin" onClick={this.handleColor4} style={{ backgroundColor: temp5 }}>
-                                <DeleteTwoToneIcon />
-                                <span className="drawer-names">Bin</span>
-                            </MenuItem>
-                            <Divider />
-                        </Drawer>
-                    </div>
+            <div>
+                <MuiThemeProvider theme={theme}>
+                    <Drawer variant='persistent' open={this.props.menuSelect} style={{ top: '65px' }} >
+                        <Button className="labelcontent">
+                            <EmojiObjectsOutlinedIcon className="labelicon" />
+                            <span className="labeltext">Notes</span></Button>
+                        <Button className="labelcontent" onClick={this.handleGetReminderNotes}>
+                        <NotificationsIcon className="labelicon"/>
+                        <span className="labeltext">Reminders</span></Button>
+                        <Divider />
+                        <span>Label</span>
+                        <div>
+                        <div>
+                            {displayallLables}
+                        </div>
+                        </div>
+                        <Button className="labelcontent">
+                            <CreateOutlinedIcon className="labelicon"/>
+                            <span className="labeltext">Edit Lables</span></Button>
+                        <Divider />
+                        <Button className="labelcontent" onClick={this.handleGetArchivedNotes}>
+                            <ArchiveOutlinedIcon  className="labelicon"/>
+                            <span className="labeltext">Archive</span></Button>
+                        <Button className="labelcontent" onClick={this.handleGetTrashedNotes}>
+                            <DeleteTwoToneIcon className="labelicon" />
+                            <span className="labeltext">Trash</span></Button>
+                    </Drawer>
                 </MuiThemeProvider>
             </div>
         )
     }
 }
-export default withRouter(Side_navigation_bar);
+

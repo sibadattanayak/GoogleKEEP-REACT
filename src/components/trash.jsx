@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
+import { trash } from '../services/noteservice';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 
 class Trash extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isTrash: false,
+            isDeleted: false,
             anchorEl: false,
         }
     }
+
     handleButton = () => {
         var trashNoteId = this.props.trashNoteId;
         var data = {
             noteIdList: [trashNoteId],
-            isTrash: true
+            isDeleted: true
         }
-        console.log('Inside trash=>> ', trashNoteId);
-        
+        console.log('data in trashcomp', trashNoteId);
+        trash(data)
+            .then((res) => {
+                console.log('res in trash after hitting', res);
+                this.props.trashToMore(true)
+            }).catch((err) => {
+                console.log('error in trash ', err);
+            })
     }
     render() {
         return (

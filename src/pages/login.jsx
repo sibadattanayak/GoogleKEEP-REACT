@@ -11,16 +11,17 @@ export default class Login extends React.Component {
             userPassword: '',
             snackBarMsg: '',
             openSnackBar: false,
-            validator   
+            validator
         }
     }
 
 
-    validateEmail(){      
+    validateEmail() {
         var emailPattern = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/";
-        return emailPattern.test(this.state.userEmail); 
-      } 
-    
+        
+        return emailPattern.test(this.state.userEmail);
+    }
+
     handleuserEmail = (event) => {
         this.setState({
             userEmail: event.target.value
@@ -32,8 +33,8 @@ export default class Login extends React.Component {
         })
     }
     handleSubmit = () => {
-        if (this.state.userEmail === '' & this.validateEmail===false) {
-// || this.validator.validate(this.state.userEmail)
+        if (this.state.userEmail === '' || this.validateEmail === false) {
+            // || this.validator.validate(this.state.userEmail)
 
             this.setState({
                 openSnackBar: true,
@@ -47,7 +48,7 @@ export default class Login extends React.Component {
             })
         }
         else {
-              let data = {
+            let data = {
                 "userEmail": this.state.userEmail,
                 "userPassword": this.state.userPassword
             }
@@ -70,44 +71,44 @@ export default class Login extends React.Component {
     }
     render() {
         return (
-            <div className="login-container">
-                
+           <div className="login-container">
+
                 <Card className="login-card">
                     <div>
-                        <div className="loginImage">
-                            <img src="/assets/images/login.png" alt="User Login"></img>
-                        </div>  
+ 
+                        <img className="loginImage" src={require('../assets/images/login.png')} />
+
                         <h1>
                             Fundoo Login
                         </h1>
                         <div className="loginEmail">
-                        <TextField
-                        required
-                        fullWidth
-                        type="email"
-                            id="userEmail"
-                            placeholder="example@gmail.com"
-                            variant="outlined"
-                            value={this.state.userEmail}
-                            onChange={this.handleuserEmail}
-                        /></div>
+                            <TextField
+                                required
+                                fullWidth
+                                type="email"
+                                id="userEmail"
+                                placeholder="example@gmail.com"
+                                variant="outlined"
+                                value={this.state.userEmail}
+                                onChange={this.handleuserEmail}
+                            /></div>
                         <div className="loginPassword">
-                        <TextField type="password"
-                        required
-                            id="userPassword"
-                            placeholder=" * * * * * * * * * * * * * * "
-                            variant="outlined"
-                            value={this.state.userPassword}
-                            onChange={this.handleuserPassword}
-                        /></div>
+                            <TextField type="password"
+                                required
+                                id="userPassword"
+                                placeholder=" * * * * * * * * * * * * * * "
+                                variant="outlined"
+                                value={this.state.userPassword}
+                                onChange={this.handleuserPassword}
+                            /></div>
                         <div className="loginButton">
-                        <Button size="small" variant="contained" color="primary" onClick={this.handleSubmit}>Login</Button>
+                            <Button size="small" variant="contained" color="primary" onClick={this.handleSubmit}>Login</Button>
                         </div>
                         <div className="linkDiv">
-                           <a href="/registration">New User?</a>
-                             &nbsp; &nbsp; &nbsp; &nbsp;
+                            <a href="/registration">Registration</a>
+                            &nbsp; &nbsp; &nbsp; &nbsp;
                             <a href="/forgotpassword">Forgot Password</a>
-                        
+
                         </div>
                     </div>
                 </Card>

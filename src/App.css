@@ -1,256 +1,647 @@
+.Divider{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
 /*=========Login=========*/
 
 .login-container {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-top: 100px;
-  }
-  .login-card {
-    width: 300px;
-   display: flex;
-   justify-content: center;
-   flex-direction: row;   
-  }
-
-  .loginImage{
-    margin-bottom: 30px;
-    display: flex;
-   justify-content: center;
-   flex-direction: row;
-  }
-
-  .loginEmail{
-    margin-bottom: 20px;
-  }
-
-  .loginPassword{
-    margin-bottom: 20px;
-  }
-
-  .loginButton {
-    margin-left: 73%;
-    margin-bottom: 20px;
-
-  }
-
-  .linkDiv{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-  }
-
-/*=========Registration=========*/
-  
-.registration-container {
     margin-top: 50px;
+}
+
+.login-card {
     display: flex;
     justify-content: center;
     flex-direction: row;
-  }
-  .registration-card {
-    width: 380px;
-   display: flex;
-   justify-content: center;
-   flex-direction: row;
-  }
+    width: 300px;
+}
 
-  .regImage{
-    margin-bottom: 30px;
+.loginImage {
     display: flex;
-   justify-content: center;
-   flex-direction: row;
-  }
+    flex-direction: row;
+    width: 200px;
+    height: 150px;
+    margin-left: 10px;
+}
 
-  .regFName{
+.loginEmail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.loginPassword {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.loginButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 73%;
+    margin-bottom: 20px;
+}
+
+.linkDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+/*=========Registration=========*/
+
+.registration-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+
+h1 {
+    align-content: center;
+    margin-left: 20px;
+}
+
+.registration-card {
+    width: 380px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.regImage {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 5px;
+    height: 200px;
+}
+
+.regFName {
     width: 340px;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
-    
-   }
-   
-   .regLName{
-     margin-bottom: 20px; 
-     width: 340px;
-     display: flex;
-     justify-content: center;
-     
-    }
-    
-   .regEmail{
-     margin-bottom: 20px;
-     width: 253px;
-     display: flex;
-     justify-content: center;
-     margin-left: 42px;
-    }
-    
-   .regPassword{
-     margin-bottom: 20px; 
-     width: 340px;
-     display: flex;
-     justify-content: center;
-     
-    }
-   
-    .regButton{
-    margin-bottom: 20px; 
+}
+
+.regLName {
+    margin-bottom: 20px;
+    width: 340px;
     display: flex;
     justify-content: center;
-    margin-left: 170px;  
-  }
+}
 
-    .regLink{
-      display: flex;
+.regEmail {
+    margin-bottom: 20px;
+    width: 228px;
+    display: flex;
+    justify-content: center;
+    margin-left: 58px;
+}
+
+.regPassword {
+    margin-bottom: 20px;
+    width: 340px;
+    display: flex;
+    justify-content: center;
+}
+
+.regButton {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-left: 170px;
+}
+
+.regLink {
+    display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-    margin-left: 45px;  
-  }
-   
+    margin-left: 45px;
+}
 
-  /*=========Reset Password=========*/
-  
+
+/*=========Reset Password=========*/
+
 .resetPassword-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 130px;
-  flex-direction: row;
+    display: flex;
+    justify-content: center;
+    margin-top: 130px;
+    flex-direction: row;
 }
+
 .resetPassword-card {
-  width: 350px;
- display: flex;
- justify-content: center;
- flex-direction: row;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
 
-.resetPassword1{
-  margin-bottom: 20px;
-  width: 250px;
-  display: flex;
-  justify-content: center;
-  margin-left: 5px;
-
+.resetPassword1 {
+    margin-bottom: 20px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
 }
 
-.resetPassword2{
-  margin-bottom: 20px;
-  width: 250px;
-  display: flex;
-  justify-content: center;
-  margin-left: 5px;
-
+.resetPassword2 {
+    margin-bottom: 20px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
 }
 
-.resetButton{
-  margin-bottom: 20px; 
-  display: flex;
-  justify-content: center;
-  margin-left: 170px;  
+.resetButton {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-left: 170px;
 }
+
+
 /*=========Forgot Password=========*/
-  
+
 .forgotPassword-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 150px;
-  flex-direction: row;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    flex-direction: row;
 }
+
 .forgotPassword-card {
-  width: 400px;
- display: flex;
- justify-content: center;
- flex-direction: row;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .forgotEmail {
-  
-  margin-bottom: 20px;
-  width: 253px;
-  display: flex;
-  justify-content: center;
-  margin-left: 15px;
-
-}
-
-.forgotButton{
-  margin-bottom: 20px; 
+    margin-bottom: 20px;
+    width: 253px;
     display: flex;
     justify-content: center;
-    margin-left: 170px; 
-}
-/*=========Dashboard Main Div=========*/
-
-.mainDiv{
-  display:flex;
-  flex-direction: row;
-  width: 821px;
-  height: 65px;
-}
-.dashboardAppBar{
-  display: flex;
-  flex-direction: row;
-  height: 40px;
-  margin-top: 5px;
-  width: 400px;
+    margin-left: 15px;
 }
 
-.dashboardGrid{
-  display: flex;
-  flex-direction: row;
-  height: 40px;
-  margin-top: 5px;
-  margin-right: -50px;
+.forgotButton {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-left: 170px;
 }
 
-/*====================================*/
-  .noteCard{
-   display: flex;
-   justify-content: center;
-   flex-direction: row;
-   margin-top:30px;
-   margin-left:300px;
-  }
-
-.noteCardContent{
-  
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  width: 250px;
-  height: 166px;
-  border: hidden;
-}
-
-   .notesProperties{
+.notesProperties {
     display: flex;
     flex-direction: row;
- justify-content: center;
-    visibility: hidden;  
-     margin-top:10px;
-     margin-bottom:-20px ;
-    
-  margin-left: -170px;
+    justify-content: center;
+    visibility: hidden;
+    margin-left: 20px;
+}
+ 
+.noteCard:hover .notesProperties {
+    visibility: visible;
+    display: flex;
+    flex-direction: row;
+}
+.createnoteProperty{
+  visibility: visible;
+  display: flex;
+  flex-direction: row;
+  margin-top: -2px;
+}
 
-  }
-   .noteCard:hover .notesProperties{
-       visibility: visible;
-       display: flex;
-       flex-direction: row;
-     }
 /*=======================*/
-.drawer-container{
-  height: auto;
-}
-.drawer-div1{
-  height: auto;
+
+.drawer-container {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    height: auto;
+    /* width: 25% */
+  }
+  
+  .drawer-data:focus {
+    background-color:#FEEFC3;
+  }
+
+  .drawer-data{
+      margin-left: 5px;
+  }
+
+.notesIcon{
+    margin-left: -3px;
 }
 
-.drawer-label
-{
-  height: auto;
-}
-.drawer{
-  height: auto;
+.drawer-Notesnames{
+    margin-left: 20px;
 }
 
+  .drawer-names {
+    padding-left: 20px;
+    font-family: 'Google Sans', Roboto, Arial, sans-serif;
+    font-size: .875rem;
+    font-weight: 500;
+    color: #202124;
+    height: auto;
+    margin-top: 5px;
+  }
+
+  .drawer-label {
+    padding: 4%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+  }
+  
+  .drawer-labels {
+    overflow-y: scroll;
+    height: 55%;
+    font-size: 15px;
+     display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;  
+  }
+  .drawer-AllLables{
+    margin-left: 20px;
+  }
+  
+
+#notes {
+    margin: 20px;
+}
+/* ===============color==================== */
+
+.colorpalette-card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: fixed;
+    width: 9%;
+    height: 10%;
+  }
+/* ==================================================== */
+.createnote{
+    width:600px;
+    height: 35px;
+    margin-left: 30%;
+  }
+  .displaynote{
+    margin-top: 20px;
+  }
+  .allnotes{
+    display:flex;
+    flex-direction: row;
+  }
+  
+  .color-styles {
+    width: 160px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .color-map {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+  }
+  
+  /* -----------------------------------------collaborator---------------------------------- */
+  
+  .collaborator-buttons{
+      display: flex;
+      width: 94%;
+      background-color: rgba(0,0,0,0.07);
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: flex-end;
+      justify-content: flex-end;
+      padding: 10px 15px;
+  }
+  .collaborator-avtar-email{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+  }
+  .collaborator-name-email{
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .collab-card1{
+    overflow-y: scroll;
+    height: 150px;
+  }
+  /*---------------------------------------------collaborator------------------------------------------------------*/
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #09d3ac;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  .login-card{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+  .submit-button {
+    margin-left: auto;
+  }
+  .register{
+    text-align: center;
+  }
+  
+  #search {
+    margin-left: 8vw;
+  }
+  .icons-button {
+    margin-right: 2vw;
+  }
+  .view-container {
+    opacity: 0;
+  }
+  .keep-img {
+    width: 40px;
+    height: 40px;
+  }
+  .search {
+    display: flex;
+    border-radius: 8px;
+    border: 0px;
+    font-size: 15px; 
+   margin-left: 40px;
+    background: #f5f5f5;
+    justify-content: center;
+    width:52vw;
+    height: 50px;
+    align-items: center;
+    color:black;
+  }
+  
+  .searchbar{
+    width:100%;
+    float: left;
+    display: flex;
+    margin-left: 10px;
+    color: black;
+  }
+  .labelcontent{
+    display: flex;
+    border-radius: 50px 50px 50px 50px;
+   border: none;
+   outline-style:hidden;
+    width:100%;
+    margin :0.5px 0.5px 0.5px 0.5px;
+    display: inline-block;
+    box-shadow: none;
+    background-color: yellow;
+  }
+  .labeltext{
+    float: left;
+    width: 142px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    margin-top: 10px;
+    
+  }
+  .labelicon{
+    height: 24px;
+  width: 24px;
+  float: left;
+  margin-top: 8px;
+  vertical-align: middle;
+  }
+  .profile-div {
+   position: absolute;
+   right: 0;
+  }
+  .icons-div {
+    margin-left: 7vw;
+  }
+  /* for display note */
+  .cardDisplayNote{
+    height: auto;
+    width:'50vw';
+  }
+  .inputDisplatNote{
+    border:'none';
+    outline:'none';
+    width:'250px';
+  }
+  /* for properties */
+  .iconDisplay{
+  display: flex;
+  white-space: nowrap;
+  }
+  .MuiIconButton-root {
+    flex: 0 0 auto;
+    color: rgba(0, 0, 0, 0.54);
+    overflow: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+  }
+  
+  .note-div {
+    width: 80%;
+    display: flex;
+    margin-left: 20%;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  
+  .display-card {
+    margin: 10px;
+    width: 300px;
+    height: auto;
+  }
+  .list-view{
+    display:flex;
+    width:600px;
+    height: auto;
+    margin:0px 0px 10px 0px;
+  }
+  /* for create note */
+  .createnote{
+    width:600px;
+    height: 35px;
+    margin-left: 30%;
+  }
+  .displaynote{
+    margin-top: 20px;
+  }
+  .allnotes{
+    display:flex;
+    flex-direction: row;
+  }
+  
+  .color-styles {
+    width: 160px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .color-map {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+  }
+  
+  /* -----------------------------------------collaborator---------------------------------- */
+  
+  .collaborator-buttons{
+      display: flex;
+      width: 94%;
+      background-color: rgba(0,0,0,0.07);
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: flex-end;
+      justify-content: flex-end;
+      padding: 10px 15px;
+  }
+  .collaborator-avtar-email{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+  }
+  .collaborator-name-email{
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .collab-card1{
+    overflow-y: scroll;
+    height: 150px;
+  }
+  /*---------------------------------------------collaborator------------------------------------------------------*/
+  .editor-page{
+    width: 82%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 4%;
+  
+  }
+
+  .editor-title{
+    font-size: 28px;
+    word-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden !important;
+    padding: 10px;
+  }
+  .editor-description{
+    font-size: 20px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden !important;
+      word-wrap: break-word;
+      padding: 10px;
+  }
+  .editor-close{
+    display: flex;
+    /* justify-content: flex-end; */
+    /* margin-top:10%; */
+  }
+  .editor-close-title{
+    display: flex;
+    flex-direction: row;
+    margin-top:6%;
+    justify-content: space-between;
+  }
+  .editor-like-date{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+  }
+
+  .editor-thumb{
+    padding: 10px;
+    display: flex;
+  }
+  .editor-questionasked{
+    font-size: 20px;
+    word-wrap: break-word;
+  }
+  .editor-contents{
+    margin: 2% 0% 2% 0%;
+    overflow-y: auto;
+    max-height: 80px;
+  }
+  .editorPage{
+    width:100%;
+    display: flex;
+    justify-content:center;
+    /* padding: 30px; */
+    
+    }
+    .editor-asked-msg{
+      padding: 15px;
+    }
+    .editor-thumbsUp{
+      padding-left: 15px;
+    }
+    .para-collab{
+      display: flex;
+      justify-content: space-between;
+  }
+  .collab-dialogbox {
+    width: 500px;
+  }
+  
+  /* Add Labedl */
+  .addLAbelCard{
+    width:300px;
+  }
+  

@@ -13,7 +13,6 @@ export default class Registration extends React.Component {
             snackBarMsg: '',
             openSnackBar: false,
         }
-        // this.handleemail=this.handleemail.bind(this)
     }
 
     handlefirstName = (event) => {
@@ -66,19 +65,19 @@ export default class Registration extends React.Component {
             })
         }
         else {
-            let data={
-                "firstName":this.state.firstName,
-                "lastName":this.state.lastName,
-                "email":this.state.email,
-                "password":this.state.password
+            let data = {
+                "firstName": this.state.firstName,
+                "lastName": this.state.lastName,
+                "email": this.state.email,
+                "password": this.state.password
             }
-            console.log("registrationComponent data",data)
-            registration(data).then(res=>{
-                console.log("Response after hitting registration api >> ",data);
+            console.log("registrationComponent data", data)
+            registration(data).then(res => {
+                console.log("Response after hitting registration api >> ", data);
                 this.props.history.push('/')
-                
-            }).catch(error=>{
-                console.log("Error after hitting registration api  ",error);
+
+            }).catch(error => {
+                console.log("Error after hitting registration api  ", error);
             })
         }
     }
@@ -90,60 +89,61 @@ export default class Registration extends React.Component {
     render() {
         return (
             <div className="registration-container">
+                {/* <div className="regImage">
+                            <img src={require('../assets/images/registration.png')} />
+                        </div> */}
                 <Card className="registration-card">
                     <div>
-                    <div className="regImage">
-                            <img src="/assets/images/registration.png" alt="Registration"></img>
-                        </div>  
-                    <h1>
-                        Fundoo Registration
+                        
+                        <h1>
+                            Fundoo Registration
                     </h1>
-                    <div className="regFName">
-                    <TextField
-                    required
-                        id="firstName"
-                        placeholder="First Name"
-                        variant="outlined"
-                        value={this.state.firstName}
-                        onChange={this.handlefirstName}
-                    /></div>
-                    <div className="regLName">
-                    <TextField
-                        id="lastName"
-                        placeholder="Last Name"
-                        variant="outlined"
-                        value={this.state.lastName}
-                        onChange={this.handlelastName}
-                    /></div>
-                    <div className="regEmail">
-                    <TextField
-                    required
-                    fullWidth
-                    type="email"
-                        id="email"
-                        placeholder="example@gmail.com"
-                        variant="outlined"
-                        value={this.state.email}
-                        onChange={this.handleemail}
-                    /></div>
-                    <div className="regPassword">
-                    <TextField 
-                    required
-                    type="password"
-                    id="password"
-                        placeholder=" * * * * * * * * * * * * * * * "
-                        variant="outlined"
-                        value={this.state.password}
-                        onChange={this.handlePassword}
-                    /></div>
-                    <div className="regButton">
-                    <Button size="small" variant="contained" color="primary" onClick={this.handleSubmit}>Submit</Button>
-                    </div>
-                    <div className="regLink"> <a href="/">Login </a>
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <div className="regFName">
+                            <TextField
+                                required
+                                id="firstName"
+                                placeholder="First Name"
+                                variant="outlined"
+                                value={this.state.firstName}
+                                onChange={this.handlefirstName}
+                            /></div>
+                        <div className="regLName">
+                            <TextField
+                                id="lastName"
+                                placeholder="Last Name"
+                                variant="outlined"
+                                value={this.state.lastName}
+                                onChange={this.handlelastName}
+                            /></div>
+                        <div className="regEmail">
+                            <TextField
+                                required
+                                fullWidth
+                                type="email"
+                                id="email"
+                                placeholder="example@gmail.com"
+                                variant="outlined"
+                                value={this.state.email}
+                                onChange={this.handleemail}
+                            /></div>
+                        <div className="regPassword">
+                            <TextField
+                                required
+                                type="password"
+                                id="password"
+                                placeholder=" * * * * * * * * * * * * * * * "
+                                variant="outlined"
+                                value={this.state.password}
+                                onChange={this.handlePassword}
+                            /></div>
+                        <div className="regButton">
+                            <Button size="small" variant="contained" color="primary" onClick={this.handleSubmit}>Submit</Button>
+                        </div>
+                        <div className="regLink"> <a href="/">Login </a>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <a href="/forgotpassword">Forgot Password</a>
                         </div>
-                        </div>
+                    </div>
                 </Card>
 
                 <Snackbar
