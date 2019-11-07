@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -13,7 +11,9 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import ClearIcon from '@material-ui/icons/Clear';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { Dropdown } from 'semantic-ui-react'
+
+
 import LoopIcon from '@material-ui/icons/Loop';
 import ViewAgendaIcon from '@material-ui/icons/ViewAgenda';
 
@@ -21,22 +21,6 @@ import { Grid } from '@material-ui/core';
 import Side_navigation_bar from '../components/side_navigation_bar'
 import Display_notes from '../components/display_notes';
 import Create_note from '../components/create_note';
-
-
-
-// const useStyles = makeStyles(theme => ({
-//     root: {
-//       display: 'flex',
-//       flexWrap: 'wrap',
-//       justifyContent: 'space-around',
-//       overflow: 'hidden',
-//       backgroundColor: theme.palette.background.paper,
-//     },
-//     gridList: {
-//       width: 500,
-//       height: 450,
-//     },
-//   }));
 
 
 export default class Dashboard extends Component {
@@ -55,16 +39,22 @@ export default class Dashboard extends Component {
         console.log(this.state.isOpen);
     };
 
-    // Dashboard.propTypes = {
-    //     handleList: PropTypes.func,
-    //     handleGrid: PropTypes.func,
-    // };
-
-    handleView=()=>{
+    handleView = () => {
         this.setState({
-            view:!this.state.view
+            view: !this.state.view
         })
     }
+
+    handleShowProfileMenu =() =>{
+
+    }
+
+
+    handleLogout = () => {
+        localStorage.removeItem('token');
+        this.props.history.push('/');
+    }
+
 
     render() {
 
@@ -104,14 +94,32 @@ export default class Dashboard extends Component {
                                 <LoopIcon onClick={() => window.location.reload(false)}></LoopIcon>
                             </IconButton>
                             <IconButton color="inherit" onClick={this.handleView}>
-                            {this.state.view?<ViewAgendaIcon />:<AppsIcon />}
+                                {this.state.view ? <ViewAgendaIcon /> : <AppsIcon />}
                             </IconButton>
 
                         </div>
                         <div style={{ display: 'flex', color: '#808080' }} className="profile-div">
                             <Grid >
-                                <img alt='not found' style={{ width: '35px', height: '35px', borderRadius: '50%' }} src={require('../assets/images/profile.JPG')}
-                                />
+                                <IconButton onClick={this.handleShowProfileMenu}>
+                                    <img alt='not found' style={{ width: '35px', height: '35px', borderRadius: '50%' }} src={require('../assets/images/profile.JPG')} />
+                                </IconButton>
+
+                                {
+                                    this.state.showMenu
+                                        ? (
+                                            <div className="menu">
+                                                <button onClick={this.handleLogout}> Logout </button>
+                                            </div>
+                                        )
+                                        : (
+                                            null
+                                        )
+                                }
+
+
+
+
+
                             </Grid>
                         </div>
                     </Toolbar>
@@ -120,7 +128,7 @@ export default class Dashboard extends Component {
                     <Create_note />
                 </div>
                 <div>
-                    <Display_notes viewProps={this.state.view}/>
+                    <Display_notes viewProps={this.state.view} />
                 </div>
             </div>
         );

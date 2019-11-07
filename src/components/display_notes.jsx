@@ -44,43 +44,11 @@ export default class Display_notes extends Component {
     })
   }
   openDialog = () => {
-    // <FormDialog/>
-    //   <div>
-    //   <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-    //     Open form dialog
-    //   </Button>
-    //   <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-    //     <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-    //     <DialogContent>
-    //       <DialogContentText>
-    //       <div>
-    //           <input style={{border:'none',outline:'none',width:'350px'}} type="text" placeholder='title'/>
-    //        </div>
-    //       </DialogContentText>
-    //       <div>
-    //           <TextareaAutosize style={{width:'350px',marginTop:'10px',border:'none', outline:'none'}} 
-    //           placeholder='description'/>
-    //         </div>
-    //     </DialogContent>
-    //     <DialogActions> 
-    //         <div>
-    //     <Property/>
-    //     </div>
-    //     <div>
-    //       <Button onClick={handleClose} color="primary">
-    //         Cancel
-    //       </Button>
-    //       </div>
-    //     </DialogActions>
 
-    //   </Dialog>
-
-    // </div>
   };
 
   render() {
-    // if(!this.state.doescheckfield)
-    // {
+
     console.log("view porps", this.props.viewProps);
     const cardView = this.props.viewProps ? "display-card" : "list-view"
     let displayAllNotes = this.state.allNotes.map((object, index) => {
@@ -101,9 +69,6 @@ export default class Display_notes extends Component {
 
                 <Note_card id={object.id} />
 
-                {/* <div>
-              <Properties id={object.id}/>
-              </div> */}
               </CardContent>
             </div>
           </Card>
@@ -119,5 +84,3 @@ export default class Display_notes extends Component {
     );
   }
 }
-
-// }
