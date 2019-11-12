@@ -102,6 +102,7 @@ export default class Registration extends React.Component {
                             <TextField
                                 required
                                 id="firstName"
+                                name="firstName"
                                 placeholder="First Name"
                                 variant="outlined"
                                 value={this.state.firstName}
@@ -110,6 +111,7 @@ export default class Registration extends React.Component {
                         <div className="regLName">
                             <TextField
                                 id="lastName"
+                                name="lastName"
                                 placeholder="Last Name"
                                 variant="outlined"
                                 value={this.state.lastName}
@@ -119,6 +121,7 @@ export default class Registration extends React.Component {
                             <TextField
                                 required
                                 fullWidth
+                                name="email"
                                 type="email"
                                 id="email"
                                 placeholder="example@gmail.com"
