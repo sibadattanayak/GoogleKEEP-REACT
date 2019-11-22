@@ -15,6 +15,7 @@ import Note_property from './components/note_property';
 import Add_collaborator from './components/add_collaborator';
 import Color from './components/color';
 import Display_notes from './components/display_notes';
+import ArchiveHeader from './components/headerarchive';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path='/color' component={Color} />
         <Route path='/collaborator' component={Add_collaborator} />
         <Route path='/displaynotes' component={Display_notes} />
+        <Route path='/archiveheader' component={ArchiveHeader} />
         
 
       </Switch>

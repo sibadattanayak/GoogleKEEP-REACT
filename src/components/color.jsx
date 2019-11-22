@@ -36,12 +36,10 @@ export default class Color extends Component {
 
     handleChangeColor = (color) => {
         
-        console.log('inside close method of proprties: ');
+        console.log('inside close method of proprties: ',color.target.value);
         console.log(this.state.noteId);
         changeColor(color.target.value,localStorage.getItem('token'),this.state.noteId).then(res=>{
             console.log("Response after hitting login api is ",res);
-           
-            
         }).catch(err=>{
             console.log("Error after hitting login api  ",err);
         })

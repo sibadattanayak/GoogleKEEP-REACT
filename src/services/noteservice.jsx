@@ -28,20 +28,22 @@ export function addCollaboratorNotes(noteId,email){
 
 
 export function changeColor(color, token, id) {
-    return axios.put(baseURL + '/changecolor/' + color + '?id=' + id, null, { headers: { 'token': token } }
+    console.log(color);
+    console.log(token,id);
+    return axios.put(baseURL + '/changecolor/' + color + '?noteId=' + id, null, { headers: { 'token': token } }
     )
 }
 
 
 export function getNotes(token) {
-
-    return axios.get(baseURL + '/showallnotes', { headers: { 'token': token } }
+    console.log(token)
+    return axios.get(baseURL + '/showallnotes', {headers: {'token' :  localStorage.getItem('token')}}
     )
 }
 
-export function createNotes(token, data) {
+export function createNotes(data) {
 
-    return axios.post(baseURL + '/createnote', data, { headers: { 'token': token } }
+    return axios.post(baseURL + '/createnote', data,{headers: {'token' :  localStorage.getItem('token')}}
     )
 }
 
@@ -54,12 +56,19 @@ export function trash(data) {
         })
 }
 
+export  function trashNotes(noteId) {
+  
+    console.log(noteId);
+    return axios.put(baseURL+'/trash?noteId='+noteId,null,{headers: {'token' :  localStorage.getItem('token')}}
+    )
+}
+
 export  function addReminder(noteId,date) {
    
     var date = new Date(date.reminder);
     let datetime=date.toISOString();
     
-return axios.put(baseURL+'/notes/reminder?noteId='+noteId+'&reminderDate='+datetime,null,{headers: {'token' :  localStorage.getItem('token')}}
+return axios.put(baseURL+'/reminder?noteId='+noteId+'&reminderDate='+datetime,null,{headers: {'token' :  localStorage.getItem('token')}}
     )
 }
 
@@ -72,3 +81,12 @@ export function archive(data) {
 
         })
 }
+
+export  function deleteNote(noteId) {
+return axios.delete(baseURL+'/deletenote/?noteId='+noteId,{headers: {'token' :  localStorage.getItem('token')}}
+    )
+}
+export  function getArchive() {
+    return axios.delete(baseURL+'/getarchivednotes',{headers: {'token' :  localStorage.getItem('token')}}
+        )
+    }

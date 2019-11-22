@@ -28,9 +28,9 @@ class Note_property extends React.Component {
                     <CardActions className="notesProperties">
                         <IconButton size="small"><Reminder /></IconButton>
                         <IconButton size="small"><Collaborator /></IconButton>
-                        <IconButton size="small"><Color /></IconButton>
+                        <IconButton size="small"><Color id={this.props.id}/></IconButton>
                         <IconButton size="small"><Archive /></IconButton>
-                        <IconButton size="small"><Note_toolbar_menu /></IconButton>
+                        <IconButton size="small"><Note_toolbar_menu id={this.props.id}/></IconButton>
                     </CardActions>
  
             </div>

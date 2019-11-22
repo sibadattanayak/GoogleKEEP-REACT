@@ -55,7 +55,7 @@ export default class Login extends React.Component {
             console.log("loginComponent==> ", data)
             login(data).then(res => {
                 console.log(res)
-                localStorage.setItem('token', res.data.description);
+                localStorage.setItem('token', res.data.data);
                 console.log("TOKEN", localStorage.getItem('token'));
                 this.props.history.push('/dashboard')
 

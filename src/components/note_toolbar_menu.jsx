@@ -5,21 +5,23 @@ import IconButton from '@material-ui/core/IconButton';
 //import Menu from '@material-ui/core/Menu';
 import { Menu } from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { trashNotes } from '../services/noteservice';
 
 
 
 class Note_toolbar_menu extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
+            noteId:props.id,
             ITEM_HEIGHT : 48,
             anchorEl:'',
-            options : [
-                'Delete Note',
-                'Add Lebel',
-                'Comming Soon' ,
-            ]
+            // options : [
+            //     'Delete Note',
+            //     'Add Lebel',
+            //     'Comming Soon' ,
+            // ]
 
         }
     }
@@ -29,11 +31,20 @@ class Note_toolbar_menu extends React.Component {
         })
     };
 
-    handleClose = () => {
-        this.setState({
-            anchorEl:null
+    
+    handleDeleteNote = () => {
+        trashNotes(this.state.noteId).then(res=>{
+
+            console.log("Response after hitting delete note api is ",res);            
+        }).catch(err=>{
+            console.log("Error after hitting delete note api  ",err);
         })
+        // this.setState({
+        //     anchorEl:null
+        // })
     };
+
+    
     render() {
         return (
             <div>
@@ -58,11 +69,13 @@ class Note_toolbar_menu extends React.Component {
                         },
                     }}
                 >
-                    {this.state.options.map(option => (
-                        <MenuItem key={option} selected={option === 'Pyxis'} onClick={this.handleClose} >
-                            {option}
+                   
+                        <MenuItem >
+                            <div>
+                                <span onClick={this.handleDeleteNote}>delete note</span>
+                            </div>
                         </MenuItem>
-                    ))}
+                  
                 </Menu>
             </div >
         );

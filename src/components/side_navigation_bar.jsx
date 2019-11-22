@@ -51,7 +51,7 @@ export default class Sidenav extends Component {
         this.props.history.push('/reminder'); 
     }
     handleGetArchivedNotes= () =>{
-        this.props.history.push('/archive');
+        this.props.history.push('/archiveheader');
     }
     handleGetTrashedNotes= () =>{
         this.props.history.push('/trash');
